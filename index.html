@@ -5,9 +5,15 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #f1f1f1; font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, Adwaita Sans, Cantarell, Ubuntu, roboto, noto, helvetica, arial, sans-serif; padding: 1rem; }
 .wrap { padding: 1rem 0; }
-.controls { display: flex; gap: 10px; margin-bottom: 1rem; flex-wrap: wrap; align-items: center; }
-input[type=text] { flex: 1; min-width: 180px; }
-select { min-width: 140px; }
+.controls { display: flex; gap: 10px; margin: 1rem auto; flex-wrap: wrap; align-items: center; }
+input[type=text] { flex: 1; min-width: 180px; padding: 8px}
+
+@media screen and (max-width: 768px) {
+  .controls { flex-direction: column; }
+  input {width: 100%}
+  select {width: 100%}
+}
+select { min-width: 140px; padding: 8px;}
 .count { font-size: 13px; color: var(--color-text-secondary); }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px; }
 .meal { background: white; border: 0.5px solid rgba(0,0,0,.2); border-radius: 6px; padding: 8px 12px 15; font-size: 18px; font-weight:600; var(--color-text-primary); }
@@ -25,9 +31,9 @@ select { min-width: 140px; }
 </head>
   <body>
 <div class="wrap">
-<h2 class="sr-only">Unique meal list with search and category filter</h2>
+<h2 class="sr-only">Meals</h2>
 <div class="controls">
-  <input type="text" id="search" placeholder="Search meals…" oninput="render()">
+  <input type="text" id="search" placeholder="Search meals..." oninput="render()">
   <select id="cat" onchange="render()">
     <option value="all">All categories</option>
     <option value="fish">Fish / Seafood</option>
