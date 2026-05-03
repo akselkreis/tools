@@ -31,7 +31,7 @@ select { min-width: 140px; padding: 8px;}
 </head>
   <body>
 <div class="wrap">
-<h2 class="sr-only">Meals</h2>
+<h2 class="sr-only">Meals <span class="count" id="count"></span></h2>
 <div class="controls">
   <input type="text" id="search" placeholder="Search meals..." oninput="render()">
   <select id="cat" onchange="render()">
@@ -43,7 +43,7 @@ select { min-width: 140px; padding: 8px;}
     <option value="pasta">Pasta / Noodles</option>
     <option value="veg">Vegetarian other</option>
   </select>
-  <span class="count" id="count"></span>
+  
 </div>
 <div class="grid" id="grid"></div>
 </div>
